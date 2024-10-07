@@ -15,10 +15,7 @@ log_name = "genai-vertex-text-log"
 logger = client.logger(log_name)
 
 vertexai.init(project=PROJECT_ID, location=LOCATION)
-
 model = TextGenerationModel.from_pretrained("text-bison@002")
-
-
 def predict(prompt, max_output_tokens, temperature, top_p, top_k):
     logger.log_text(prompt)
     answer = model.predict(
